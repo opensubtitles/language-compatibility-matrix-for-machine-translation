@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this dataset in your research, please cite it as below."
+title: "Global Language Compatibility Matrix for Machine Translation"
+abstract: "A comprehensive dataset quantifying linguistic distance and translation compatibility between 139 global languages, providing Translation Compatibility Scores (TCS) normalized to a 0-255 scale for efficient storage and processing in Translation Management Systems, Neural Machine Translation pipelines, and Language Fallback Strategies."
+authors:
+  - name: "OpenSubtitles.org"
+    website: "https://www.opensubtitles.org"
+type: dataset
+keywords:
+  - machine translation
+  - natural language processing
+  - linguistic distance
+  - language compatibility
+  - translation management
+  - i18n
+  - l10n
+  - mutual intelligibility
+  - lexical similarity
+  - NMT
+  - neural machine translation
+  - language pairs
+  - pivot translation
+  - zero-shot learning
+license: MIT
+repository-code: "https://github.com/opensubtitles/language-compatibility-matrix-for-machine-translation"
+date-released: 2024-11-27
+version: 1.0.0
