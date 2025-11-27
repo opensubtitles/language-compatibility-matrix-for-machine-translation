@@ -1,11 +1,12 @@
 # Global Language Compatibility Matrix for Machine Translation
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![npm version](https://img.shields.io/npm/v/@opensubtitles/language-compatibility-matrix.svg)](https://www.npmjs.com/package/@opensubtitles/language-compatibility-matrix)
+[![npm downloads](https://img.shields.io/npm/dm/@opensubtitles/language-compatibility-matrix.svg)](https://www.npmjs.com/package/@opensubtitles/language-compatibility-matrix)
 [![Data: JSON](https://img.shields.io/badge/Data-JSON-blue.svg)](#data-the-compatibility-dataset)
 [![Languages: 139](https://img.shields.io/badge/Languages-139-brightgreen.svg)](#)
 [![Topic: NLP](https://img.shields.io/badge/Topic-NLP-green.svg)](#)
 [![Topic: i18n](https://img.shields.io/badge/Topic-i18n-blue.svg)](#)
-[![Version: 1.0.0](https://img.shields.io/badge/Version-1.0.0-orange.svg)](https://github.com/opensubtitles/language-compatibility-matrix-for-machine-translation/releases)
 [![GitHub Stars](https://img.shields.io/github/stars/opensubtitles/language-compatibility-matrix-for-machine-translation?style=social)](https://github.com/opensubtitles/language-compatibility-matrix-for-machine-translation)
 
 > **A comprehensive dataset quantifying linguistic distance and translation compatibility between 139 global languages**
@@ -87,6 +88,29 @@ The **Translation Compatibility Score (TCS)** is a weighted aggregate of three l
 ## Data: The Compatibility Dataset (JSON)
 
 The dataset is provided in [`language-pairs-translation-proximity.json`](./language-pairs-translation-proximity.json).
+
+### Installation
+
+**Via npm:**
+```bash
+npm install @opensubtitles/language-compatibility-matrix
+```
+
+**Via direct download:**
+```bash
+curl -O https://raw.githubusercontent.com/opensubtitles/language-compatibility-matrix-for-machine-translation/master/language-pairs-translation-proximity.json
+```
+
+**Via CDN (jsDelivr):**
+```javascript
+// Always get the latest version
+const url = 'https://cdn.jsdelivr.net/gh/opensubtitles/language-compatibility-matrix-for-machine-translation@master/language-pairs-translation-proximity.json';
+
+// Or use a specific version
+const url = 'https://cdn.jsdelivr.net/gh/opensubtitles/language-compatibility-matrix-for-machine-translation@v1.0.0/language-pairs-translation-proximity.json';
+```
+
+### Data Format
 
 This JSON object is keyed by **ISO 639-1** (2-letter) codes where available, falling back to **ISO 639-2/T** (3-letter) codes.
 
