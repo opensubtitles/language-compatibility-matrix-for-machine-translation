@@ -64,15 +64,15 @@ This JSON object is keyed by **ISO 639-1** (2-letter) codes where available, fal
 {
   "sk": {
     "cs": 252,
-    "pl": 198,
-    "ru": 165,
-    "en": 128
+    "pl": 240,
+    "ru": 220,
+    "en": 195
   },
   "es": {
-    "pt": 227,
-    "ca": 235,
-    "it": 227,
-    "fr": 207
+    "pt": 245,
+    "ca": 248,
+    "it": 230,
+    "fr": 220
   }
 }
 ```
@@ -115,7 +115,7 @@ def get_fallback_chain(target_lang, available_langs, threshold=150):
 available = ['en', 'cs', 'pl', 'de']
 fallbacks = get_fallback_chain('sk', available)
 print(f"Fallback chain for Slovak: {fallbacks}")
-# Output: ['cs', 'pl', 'en', 'de']
+# Output: ['cs', 'pl', 'en'] (de not included, below threshold)
 ```
 
 ### JavaScript/TypeScript Example
@@ -167,24 +167,27 @@ console.log(`Best pivot language: ${pivot}`); // 'pt' or 'es'
 
 The Romance family exhibits some of the highest internal compatibility scores in the world.
 
-- **Spanish (es) & Portuguese (pt)**: Score **227**. High asymmetric intelligibility; Portuguese speakers generally understand Spanish better than vice versa.
-- **Italian (it) & French (fr)**: Score **227**. Surprisingly high lexical similarity (~89%) despite phonological differences.
-- **Catalan (ca)**: Acts as a bridge between Ibero-Romance (es, pt) and Gallo-Romance (fr, it).
+- **Spanish (es) & Portuguese (pt)**: Score **245**. High asymmetric intelligibility; Portuguese speakers generally understand Spanish better than vice versa.
+- **Spanish (es) & Catalan (ca)**: Score **248**. Catalan shows very high compatibility with Spanish.
+- **Italian (it) & Spanish (es)**: Score **230**. Strong lexical similarity across the Romance branch.
+- **Italian (it) & French (fr)**: Score **220**. High lexical similarity despite phonological differences.
+- **Catalan (ca)**: Acts as a bridge between Ibero-Romance (es: 248, pt: 235) and Gallo-Romance (fr: 225, it: 220).
 
 ### Germanic Languages
 
-- **The Scandinavian Continuum**: Danish (da), Norwegian (nb), and Swedish (sv) share scores **> 217**, allowing for near-lossless "semicommunication".
-- **The English Anomaly**: English (en) is a poor pivot for Germanic syntax due to the loss of V2 word order and cases. Its score with German (de) is only **153**, lower than Dutch-German (**214**).
+- **The Scandinavian Continuum**: Danish (da), Norwegian (nb), and Swedish (sv) share very high scores: da-nb: **245**, da-sv: **248**, nb-sv: **240**, allowing for near-lossless "semicommunication".
+- **West Germanic**: English (en) to German (de) shows a score of **240**, while Dutch (nl) to German also scores **240**, reflecting their shared West Germanic heritage.
 
 ### Slavic Languages
 
-- **Slovak (sk) & Czech (cs)**: Score **250+**. These are functionally mutually intelligible dialects in many contexts.
-- **Russian (ru) & Ukrainian (uk)**: Score **158**. Lower than commonly assumed due to significant Polish (pl) influence on Ukrainian vocabulary (Score uk-pl: **179**).
+- **Slovak (sk) & Czech (cs)**: Score **252**. These are functionally mutually intelligible dialects in many contexts.
+- **Russian (ru) & Ukrainian (uk)**: Score **248**. Very high mutual intelligibility reflecting their close East Slavic relationship.
+- **Ukrainian (uk) & Polish (pl)**: Score **235**. Strong compatibility reflecting historical and geographic proximity.
 
 ### Indo-Aryan & Dravidian
 
-- **Hindi (hi) & Urdu (ur)**: Score **242**. Spoken registers are identical (Hindustani); the score accounts for the script difference (Devanagari vs. Perso-Arabic) which requires transliteration algorithms.
-- **Tamil (ta) & Malayalam (ml)**: Score **191**. High lexical overlap due to shared Sanskrit loans and Proto-Dravidian roots.
+- **Hindi (hi) & Urdu (ur)**: Score **248**. Spoken registers are identical (Hindustani); the score accounts for the script difference (Devanagari vs. Perso-Arabic) which requires transliteration algorithms.
+- **Tamil (ta) & Malayalam (ml)**: Score **215**. High lexical overlap due to shared Sanskrit loans and Proto-Dravidian roots.
 
 ## References
 
