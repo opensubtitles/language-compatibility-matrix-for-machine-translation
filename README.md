@@ -112,7 +112,7 @@ const url = 'https://cdn.jsdelivr.net/gh/opensubtitles/language-compatibility-ma
 
 ### Data Format
 
-This JSON object is keyed by **ISO 639-1** (2-letter) codes where available, falling back to **ISO 639-2/T** (3-letter) codes.
+This JSON object is keyed by **ISO 639-1** (2-letter) language codes.
 
 ### Structure
 

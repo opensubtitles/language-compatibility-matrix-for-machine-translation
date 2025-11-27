@@ -1,0 +1,55 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "language-compatibility-matrix"
+version = "1.0.0"
+description = "Comprehensive dataset quantifying linguistic distance and translation compatibility between 139 global languages"
+readme = "README.md"
+authors = [{name = "OpenSubtitles.org", email = "admin@opensubtitles.org"}]
+license = {text = "MIT"}
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Internationalization",
+    "Topic :: Software Development :: Localization",
+    "Topic :: Text Processing :: Linguistic",
+]
+keywords = [
+    "language-compatibility",
+    "language-distance",
+    "machine-translation",
+    "nlp",
+    "i18n",
+    "l10n",
+    "multilingual",
+    "dataset",
+]
+requires-python = ">=3.7"
+
+[project.urls]
+Homepage = "https://github.com/opensubtitles/language-compatibility-matrix-for-machine-translation"
+Documentation = "https://github.com/opensubtitles/language-compatibility-matrix-for-machine-translation#readme"
+Repository = "https://github.com/opensubtitles/language-compatibility-matrix-for-machine-translation"
+"Bug Reports" = "https://github.com/opensubtitles/language-compatibility-matrix-for-machine-translation/issues"
+Changelog = "https://github.com/opensubtitles/language-compatibility-matrix-for-machine-translation/releases"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"*" = ["*.json"]
