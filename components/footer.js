@@ -2,6 +2,7 @@
 class UniversalFooter {
     constructor(githubRepoUrl = 'https://github.com/opensubtitles/language-compatibility-matrix-for-machine-translation/') {
         this.githubRepoUrl = githubRepoUrl;
+        this.humanRepoUrl = githubRepoUrl.replace('github.com', 'opensubtitles.github.io');
     }
 
     // Method to create footer for any page
