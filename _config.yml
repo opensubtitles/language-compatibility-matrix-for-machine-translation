@@ -1,0 +1,55 @@
+# GitHub Pages configuration
+title: "Language Compatibility Matrix for Machine Translation"
+description: "Comprehensive language compatibility scores for machine translation systems"
+baseurl: "/language-compatibility-matrix-for-machine-translation"
+url: "https://opensubtitles.github.io"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+# Plugin settings
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# GitHub Pages specific settings
+github:
+  repository_name: "language-compatibility-matrix-for-machine-translation"
+  repository_url: "https://github.com/opensubtitles/language-compatibility-matrix-for-machine-translation"
+
+# SEO and metadata
+author: "OpenSubtitles.org"
+lang: en
+timezone: UTC
+
+# Exclude files from processing
+exclude:
+  - .git/
+  - .github/
+  - src/
+  - tools/
+  - .gitignore
+  - README.md
+  - LICENSE
+  - CITATION.cff
+  - package.json
+  - pyproject.toml
+  - setup.py
+  - .venv/
+  - node_modules/
+  - "*.pyc"
+  - "__pycache__"
+
+# Include files
+include:
+  - _pages
+  - _data
+
+# Collections (if needed)
+collections:
+  datasets:
+    output: true
+    permalink: /:collection/:name/
