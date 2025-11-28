@@ -4,17 +4,43 @@
 [![npm version](https://img.shields.io/npm/v/@opensubtitles/language-compatibility-matrix.svg)](https://www.npmjs.com/package/@opensubtitles/language-compatibility-matrix)
 [![npm downloads](https://img.shields.io/npm/dm/@opensubtitles/language-compatibility-matrix.svg)](https://www.npmjs.com/package/@opensubtitles/language-compatibility-matrix)
 [![Data: JSON](https://img.shields.io/badge/Data-JSON-blue.svg)](#data-the-compatibility-dataset)
-[![Languages: 139](https://img.shields.io/badge/Languages-139-brightgreen.svg)](#)
+[![Languages: 85](https://img.shields.io/badge/Languages-85-brightgreen.svg)](#)
 [![Topic: NLP](https://img.shields.io/badge/Topic-NLP-green.svg)](#)
 [![Topic: i18n](https://img.shields.io/badge/Topic-i18n-blue.svg)](#)
 [![GitHub Stars](https://img.shields.io/github/stars/opensubtitles/language-compatibility-matrix-for-machine-translation?style=social)](https://github.com/opensubtitles/language-compatibility-matrix-for-machine-translation)
 
-> **A comprehensive dataset quantifying linguistic distance and translation compatibility between 139 global languages**
+> **A comprehensive dataset quantifying linguistic distance and translation compatibility between 85+ global languages**
 
 Designed for developers and researchers building **Translation Management Systems (TMS)**, **Neural Machine Translation (NMT)** pipelines, and **Language Fallback Strategies** in internationalization (i18n) and localization (l10n).
 
+## Project Overview
+
+**🌐 [Live GitHub Pages Demo](https://opensubtitles.github.io/language-compatibility-matrix-for-machine-translation/)**
+
+This repository provides:
+- **📊 Main Dataset**: Production-ready language compatibility matrix ([`datasets/`](./datasets/))
+- **🎨 Interactive Visualizations**: Explore language relationships ([`visualization/`](./visualization/))
+- **📚 Comprehensive Documentation**: Technical analysis and guides ([`docs/`](./docs/))
+- **🔧 Developer Tools**: Scripts and utilities ([`tools/`](./tools/))
+- **📦 Easy Installation**: Available on [PyPI](https://pypi.org/project/language-compatibility-matrix/) and [npm](https://www.npmjs.com/package/@opensubtitles/language-compatibility-matrix)
+
+## Interactive Visualization
+
+Explore language compatibility through our interactive web interface:
+
+**🎯 [Interactive Language Matrix](./visualization/)** - Visual exploration of 85 languages and 7,225+ translation directions
+
+Key features:
+- **Real-time search** and filtering
+- **Color-coded compatibility scores**
+- **Bidirectional relationship** viewing
+- **Translation chain optimization**
+- **Export capabilities** for research
+
 ## 📖 Table of Contents
 
+- [Project Overview](#project-overview)
+- [Interactive Visualization](#interactive-visualization)
 - [Executive Summary](#executive-summary)
 - [Methodology](#methodology)
 - [Data: The Compatibility Dataset (JSON)](#data-the-compatibility-dataset-json)
@@ -24,6 +50,7 @@ Designed for developers and researchers building **Translation Management System
   - [Germanic Languages](#germanic-languages)
   - [Slavic Languages](#slavic-languages)
   - [Indo-Aryan & Dravidian](#indo-aryan--dravidian)
+- [Dataset Documentation](#dataset-documentation)
 - [References](#references)
 
 ## 🏷️ Keywords & Tags
@@ -87,7 +114,7 @@ The **Translation Compatibility Score (TCS)** is a weighted aggregate of three l
 
 ## Data: The Compatibility Dataset (JSON)
 
-The dataset is provided in [`language-pairs-translation-proximity.json`](./language-pairs-translation-proximity.json).
+The main dataset is provided in [`datasets/language-pairs-translation-proximity.json`](./datasets/language-pairs-translation-proximity.json).
 
 ### Installation
 
@@ -98,16 +125,16 @@ npm install @opensubtitles/language-compatibility-matrix
 
 **Via direct download:**
 ```bash
-curl -O https://raw.githubusercontent.com/opensubtitles/language-compatibility-matrix-for-machine-translation/master/language-pairs-translation-proximity.json
+curl -O https://raw.githubusercontent.com/opensubtitles/language-compatibility-matrix-for-machine-translation/main/datasets/language-pairs-translation-proximity.json
 ```
 
 **Via CDN (jsDelivr):**
 ```javascript
 // Always get the latest version
-const url = 'https://cdn.jsdelivr.net/gh/opensubtitles/language-compatibility-matrix-for-machine-translation@master/language-pairs-translation-proximity.json';
+const url = 'https://cdn.jsdelivr.net/gh/opensubtitles/language-compatibility-matrix-for-machine-translation@main/datasets/language-pairs-translation-proximity.json';
 
 // Or use a specific version
-const url = 'https://cdn.jsdelivr.net/gh/opensubtitles/language-compatibility-matrix-for-machine-translation@v1.0.0/language-pairs-translation-proximity.json';
+const url = 'https://cdn.jsdelivr.net/gh/opensubtitles/language-compatibility-matrix-for-machine-translation@v1.0.1/datasets/language-pairs-translation-proximity.json';
 ```
 
 ### Data Format
@@ -244,6 +271,37 @@ The Romance family exhibits some of the highest internal compatibility scores in
 
 - **Hindi (hi) & Urdu (ur)**: Score **248**. Spoken registers are identical (Hindustani); the score accounts for the script difference (Devanagari vs. Perso-Arabic) which requires transliteration algorithms.
 - **Tamil (ta) & Malayalam (ml)**: Score **215**. High lexical overlap due to shared Sanskrit loans and Proto-Dravidian roots.
+
+## Dataset Documentation
+
+### 📁 [`datasets/`](./datasets/) - Main Data Files
+
+- **[`language-pairs-translation-proximity.json`](./datasets/language-pairs-translation-proximity.json)** - **Primary dataset** with 85+ languages and 7,225+ language pairs
+- **[`language-pairs-translation-proximity-gemini-v1.json`](./datasets/language-pairs-translation-proximity-gemini-v1.json)** - Google Translate model results
+- **[`language-pairs-translation-proximity-perplexity-v1.json`](./datasets/language-pairs-translation-proximity-perplexity-v1.json)** - Perplexity-based evaluation dataset
+- **[`language-pairs-translation-proximity-manus-v1.json`](./datasets/language-pairs-translation-proximity-manus-v1.json)** - Alternative translation model analysis
+
+### 📚 [`docs/`](./docs/) - Documentation & Guides
+
+- **[`DATASET_SUMMARY.md`](./docs/DATASET_SUMMARY.md)** - Comprehensive dataset overview and methodology
+- **[`PROMOTION.md`](./docs/PROMOTION.md)** - Promotion strategy and usage examples
+- **[`GITHUB_SETUP.md`](./docs/GITHUB_SETUP.md)** - GitHub repository setup and configuration
+
+### 🔧 [`tools/`](./tools/) - Development & Analysis
+
+- **[`correct_scandinavian.py`](./tools/correct_scandinavian.py)** - Script for correcting Scandinavian language scores
+- **[`simple-server.js`](./tools/simple-server.js)** - Local development server
+- **[`publish_to_pypi.sh`](./tools/publish_to_pypi.sh)** - PyPI publishing script
+
+### 📊 [`analysis/`](./analysis/) - Research & Analysis
+
+- **[`DATASET_CORRECTIONS_ANALYSIS.md`](./analysis/DATASET_CORRECTIONS_ANALYSIS.md)** - Technical analysis of dataset corrections and methodology
+
+### 🎨 [`visualization/`](./visualization/) - Interactive Visualizations
+
+- **[`index.html`](./visualization/index.html)** - Main interactive visualization interface
+- **[`visualization.js`](./visualization/visualization.js)** - Core visualization logic
+- **Model-specific documentation**: [`gemini-dataset-documentation.html`](./visualization/gemini-dataset-documentation.html), [`manus-dataset-documentation.html`](./visualization/manus-dataset-documentation.html), [`perplexity-dataset-documentation.html`](./visualization/perplexity-dataset-documentation.html)
 
 ## References
 

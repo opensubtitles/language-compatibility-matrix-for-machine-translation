@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Compatibility Matrix for Machine Translation</title>
+    <meta name="description" content="Comprehensive language compatibility scores for machine translation systems. Features paired proximity scores, optimal source languages, and multi-model analysis.">
+    <meta name="keywords" content="machine translation, language compatibility, translation quality, NLP, language pairs">
+    <meta name="author" content="OpenSubtitles.org">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://opensubtitles.github.io/language-compatibility-matrix-for-machine-translation/">
+    <meta property="og:title" content="Language Compatibility Matrix for Machine Translation">
+    <meta property="og:description" content="Comprehensive language compatibility scores for machine translation systems. Features paired proximity scores, optimal source languages, and multi-model analysis.">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://opensubtitles.github.io/language-compatibility-matrix-for-machine-translation/">
+    <meta property="twitter:title" content="Language Compatibility Matrix for Machine Translation">
+    <meta property="twitter:description" content="Comprehensive language compatibility scores for machine translation systems. Features paired proximity scores, optimal source languages, and multi-model analysis.">
+
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Dataset",
+        "name": "Language Compatibility Matrix for Machine Translation",
+        "description": "Comprehensive language compatibility scores for machine translation systems, featuring paired proximity scores, optimal source languages, and multi-model analysis",
+        "creator": {
+            "@type": "Organization",
+            "name": "OpenSubtitles.org"
+        },
+        "license": "https://opensource.org/licenses/MIT",
+        "version": "1.0.1"
+    }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            padding: 60px 20px 40px;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .content {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            color: #667eea;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .section h3 {
+            color: #333;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: #f8f9ff;
+            border: 1px solid #e1e4e8;
+            border-radius: 10px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.15);
+            border-color: #667eea;
+        }
+
+        .card h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .card p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #5a6fd8;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 10px;
+        }
+
+        .stat .number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: block;
+        }
+
+        .stat .label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .installation {
+            background: #f6f8fa;
+            border: 1px solid #e1e4e8;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .code {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            padding: 20px;
+            opacity: 0.9;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-language"></i> Language Compatibility Matrix</h1>
+            <p>Comprehensive language compatibility scores for machine translation systems</p>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <h2>Overview</h2>
+                <p>This project provides comprehensive language compatibility scores for machine translation systems, featuring paired proximity scores, optimal source languages, and multi-model analysis. Perfect for researchers, developers, and ML engineers working on multilingual NLP applications.</p>
+
+                <div class="stats">
+                    <div class="stat">
+                        <span class="number">85</span>
+                        <span class="label">Languages</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">7,225</span>
+                        <span class="label">Language Pairs</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">3</span>
+                        <span class="label">Translation Models</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">100M+</span>
+                        <span class="label">Subtitles Analyzed</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Key Features</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h4><i class="fas fa-chart-line"></i> Paired Proximity Scores</h4>
+                        <p>Asymmetric compatibility scores showing how well languages translate between each other</p>
+                    </div>
+                    <div class="card">
+                        <h4><i class="fas fa-bullseye"></i> Optimal Source Languages</h4>
+                        <p>Identifies the best intermediate languages for multi-step translation chains</p>
+                    </div>
+                    <div class="card">
+                        <h4><i class="fas fa-robot"></i> Multi-Model Analysis</h4>
+                        <p>Supports Google Translate, DeepL, and perplexity-based evaluation</p>
+                    </div>
+                    <div class="card">
+                        <h4><i class="fas fa-database"></i> Comprehensive Coverage</h4>
+                        <p>85 languages with 7,225 unique translation directions</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Datasets & Tools</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h4><i class="fas fa-download"></i> Main Dataset</h4>
+                        <p>Production-ready language compatibility matrix with comprehensive scoring</p>
+                        <a href="datasets/" class="btn">Explore Datasets</a>
+                    </div>
+                    <div class="card">
+                        <h4><i class="fas fa-chart-bar"></i> Interactive Visualization</h4>
+                        <p>Explore language relationships through interactive visualizations</p>
+                        <a href="visualization/" class="btn">View Visualization</a>
+                    </div>
+                    <div class="card">
+                        <h4><i class="fas fa-code"></i> Python Package</h4>
+                        <p>Easy integration into your Python projects via PyPI</p>
+                        <a href="https://pypi.org/project/language-compatibility-matrix/" class="btn">Install Package</a>
+                    </div>
+                    <div class="card">
+                        <h4><i class="fas fa-book"></i> Documentation</h4>
+                        <p>Comprehensive guides and technical documentation</p>
+                        <a href="docs/" class="btn">Read Docs</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Installation</h2>
+                <div class="installation">
+                    <h3>Python Package</h3>
+                    <div class="code">pip install language-compatibility-matrix</div>
+
+                    <h3>NPM Package</h3>
+                    <div class="code">npm install language-compatibility-matrix</div>
+
+                    <h3>Direct Dataset Usage</h3>
+                    <div class="code"># Download the JSON dataset
+curl -O https://raw.githubusercontent.com/opensubtitles/language-compatibility-matrix-for-machine-translation/main/datasets/language-pairs-translation-proximity.json</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Quick Start</h2>
+                <div class="installation">
+                    <h3>Python Example</h3>
+                    <div class="code">from language_compatibility import LanguageCompatibilityMatrix
+
+# Initialize with default dataset
+lcm = LanguageCompatibilityMatrix()
+
+# Find best source language for translating to Japanese
+best_sources = lcm.get_best_sources('ja', top_k=5)
+print(f"Best sources for Japanese: {best_sources}")
+
+# Get compatibility score between two languages
+score = lcm.get_compatibility_score('en', 'ja')
+print(f"English→Japanese compatibility: {score}")</div>
+
+                    <h3>JavaScript Example</h3>
+                    <div class="code">import { LanguageCompatibilityMatrix } from 'language-compatibility-matrix';
+
+const lcm = new LanguageCompatibilityMatrix();
+
+// Find optimal translation chain
+const chain = lcm.findOptimalChain('en', 'ja', ['de', 'fr']);
+console.log('Optimal translation chain:', chain);
+
+// Check bidirectional compatibility
+const bidirScore = lcm.getBidirectionalScore('en', 'ja');
+console.log('Bidirectional compatibility:', bidirScore);</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Research & Analysis</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h4><i class="fas fa-microscope"></i> Technical Analysis</h4>
+                        <p>In-depth methodology and statistical analysis of the compatibility scoring</p>
+                        <a href="analysis/DATASET_CORRECTIONS_ANALYSIS.md" class="btn">View Analysis</a>
+                    </div>
+                    <div class="card">
+                        <h4><i class="fas fa-book-open"></i> Dataset Summary</h4>
+                        <p>Comprehensive overview of the dataset structure and key insights</p>
+                        <a href="docs/DATASET_SUMMARY.md" class="btn">Read Summary</a>
+                    </div>
+                    <div class="card">
+                        <h4><i class="fas fa-quote-right"></i> Citation</h4>
+                        <p>Use this dataset in your research with proper attribution</p>
+                        <a href="CITATION.cff" class="btn">Cite This Work</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2024 OpenSubtitles.org. Licensed under <a href="LICENSE">MIT License</a>.</p>
+            <p>Built with ❤️ for the multilingual NLP community</p>
+        </div>
+    </div>
+</body>
+</html>

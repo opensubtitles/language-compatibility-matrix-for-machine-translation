@@ -1,8 +1,0 @@
-# Files to exclude from npm package
-.git/
-.gitignore
-.DS_Store
-GITHUB_SETUP.md
-*.log
-*.tmp
-.cache/
