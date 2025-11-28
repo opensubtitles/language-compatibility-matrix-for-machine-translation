@@ -15,7 +15,7 @@ Designed for developers and researchers building **Translation Management System
 
 ## Project Overview
 
-**🌐 [Live GitHub Pages Demo](https://opensubtitles.github.io/language-compatibility-matrix-for-machine-translation/)**
+**🌐 [Interactive Language Compatibility Visualization](https://opensubtitles.github.io/language-compatibility-matrix-for-machine-translation/)**
 
 This repository provides:
 - **📊 Main Dataset**: Production-ready language compatibility matrix ([`datasets/`](./datasets/))
@@ -28,7 +28,7 @@ This repository provides:
 
 Explore language compatibility through our interactive web interface:
 
-**🎯 [Interactive Language Matrix](./visualization/)** - Visual exploration of 85 languages and 7,225+ translation directions
+**🎯 [Interactive Language Matrix](https://opensubtitles.github.io/language-compatibility-matrix-for-machine-translation/)** - Visual exploration of 85 languages and 7,225+ translation directions
 
 Key features:
 - **Real-time search** and filtering
